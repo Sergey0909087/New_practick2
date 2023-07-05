@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <button id="but" name=0>Кнопочка</button>
+    <button id="but10" name=10>кнопочка</button>
+    <title>Document</title>
+    <p id="txt"></p>
+</head>
+<body>
+   <script>
+        const arr = [
+            {name: 'apple', sum: 10, flag: false},
+            {name: 'Milk', sum: 15, flag: true},
+            {name: 'Banan', sum: 5, flag: false},
+            {name: 'PineApple', sum: 10, flag: true}
+        ]
+        function displayArr(arr){
+            arr.sort((a,b) => a.flag - b.flag);
+            arr.forEach(el => {
+                const stat = el.flag ? 'преобретено' : 'не преобретено'
+                console.log(`${el.name} ${el.sum} - ${stat}`)
+            });
+        }
+        displayArr(arr)
+
+        function addArr(arr, name, sum){
+            const searchArr = arr.find(el => el.name === name)
+            if(searchArr){
+                searchArr.sum += sum
+            }else {
+                const newObj = new Object( {name:name, sum: sum, flag: false} )
+                arr.push(newObj)
+            }
+        }
+        
+        addArr(arr, 'Chesee', 13)
+        console.log(arr)
+        addArr(arr, 'Apple', 5)
+        console.log(arr)
+
+        function payProduct(arr, name){
+            const searchArr = arr.find(el => el.name === name)
+            if(searchArr){
+                searchArr.flag = true
+                displayArr(arr)
+            }else{
+                console.log("не найден")
+            }
+        }
+
+        payProduct(arr, 'Apple')
+        
+        function maxSumm(arr){
+            arr.sort((a,b) => a.sum - b.summ);
+            const obj = arr[0]
+            console.log(obj.name)
+
+
+        
+
+
+
+
+
+       
+       maxSumm(arr)
+       function maxSumm2(arr){
+           let obj = arr[0]
+           for(let i of arr){
+               if(i.sum > obj.sum){
+                   obj = i
+               }
+           }
+       }
+       
+       
+       
+       
+       
+       
+       
+        }
+        maxSumm(arr){
+            let obj = arr[0]
+            for(let i of arr){
+                if(i.sum > obj.sum){
+                    obj = i
+                }
+            }
+            console.log(obj.name)
+        }
+        maxSumm2(arr)
+
+        let total = el.qua * el.price
+   </script> 
+</body>
+</html>
